@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Calculator</title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <h1>
+            Password Regex Calculator
+        </h1>
+    </div>
+
+    <div class="instructions">
+        <p>
+            Input/select the requirements for a user's password and the corresponding regular expression will be calculated!
+        </p>
+    </div>
+
+    <div class="requirements">
+        <form>
+            <label for="minimum">Minimum characters: (1-9)</label> 
+            <br>
+            <input type="number" min=1 max=9 id="minimum" required>
+            <br>
+            <label for="maximum">Maximum characters: (1-100)</label>
+            <br>
+            <input type="number" min=1 max=100 id="maximum" required>
+            <br>
+            <label>Requirements:</label>
+            <br>           
+            <input type="checkbox" value="Capital-Letter" id="capitalLetter">
+            <label for="capitalLetter">Require capital letter</label>
+            <br>
+            <input type="checkbox" value="Special-Char" id="specialChar">
+            <label for="specialChar">Require special character</label>
+            <br>
+            <input type="checkbox" value="Number-Req" id="numberReq">
+            <label for="numberReq">Require a number</label>
+            <br>
+            <input type="button" value="Submit" onclick="validate()">
+            <input type="reset" onclick="resetRegex()">
+        </form>
+        <!--blank p for regex answer-->
+        <p id="regexResult"></p>
+    </div>
+
+</body>
+</html>
