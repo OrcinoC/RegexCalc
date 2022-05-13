@@ -1,7 +1,6 @@
 const resetText = ""
 let min = 0;
 let max = 0;
-let regexAnswer = "";
 
 function resetRegex() {
     document.getElementById('regexResult').innerHTML = resetText;
@@ -36,18 +35,15 @@ function calculate() {
     const regexArr = ["^", "[A-Za-z\\d@$!%*?&]{" + min + "," + max + "}$"]
 
     if(document.getElementById("numberReq").checked) { //Number Required
-        regexArr.splice(1, 0, numReq);
-        regexAnswer = regexArr.join("");
-        document.getElementById('regexResult').innerHTML = regexAnswer;
+        regexArr.splice(1, 0, numReq);  
+        document.getElementById('regexResult').innerHTML = regexArr.join("");
     }
     if (document.getElementById("capitalLetter").checked) { //Capital Required
         regexArr.splice(1, 0, capitalReq);
-        regexAnswer = regexArr.join("");
-        document.getElementById('regexResult').innerHTML = regexAnswer;
+        document.getElementById('regexResult').innerHTML = regexArr.join("");
     } 
     if (document.getElementById("specialChar").checked) { //Special Char Required
         regexArr.splice(1, 0, specReq);
-        regexAnswer = regexArr.join("");
-        document.getElementById('regexResult').innerHTML = regexAnswer;               
+        document.getElementById('regexResult').innerHTML = regexArr.join("");               
     }
 };
